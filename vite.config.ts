@@ -162,7 +162,7 @@ export default defineConfig({
     },
   },
   envDir: path.resolve(import.meta.dirname),
-  base: "/scholarly-conference-research-portal/",
+  base: "/",
   root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
