@@ -47,7 +47,7 @@ export default function Header() {
             GitHub Integration
           </button>
           <button
-            onClick={() => scrollToSection('footer')}
+            onClick={() => scrollToSection('contact')}
             className="btn-ghost text-sm font-medium"
           >
             Contact
@@ -93,7 +93,7 @@ export default function Header() {
               GitHub Integration
             </button>
             <button
-              onClick={() => scrollToSection('footer')}
+              onClick={() => scrollToSection('contact')}
               className="btn-ghost w-full text-left text-sm font-medium"
             >
               Contact
