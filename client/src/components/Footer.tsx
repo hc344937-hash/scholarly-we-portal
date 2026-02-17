@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold flex items-center gap-2">
               <GraduationCap className="w-6 h-6 text-accent" />
-              Scholarly Web Portal
+              HC-Scholarly Web Portal
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Empowering the academic community with premium Scopus journals, conference tools, and collaborative workshop resources.
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Scholarly Web Portal. Built for Academic Excellence.
+            © {currentYear} HC-Scholarly Web Portal. Created by HC.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>

@@ -25,7 +25,7 @@ export default function Header() {
             <GraduationCap className="w-6 h-6" />
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-foreground leading-none">Scholarly Web Portal</span>
+            <span className="text-lg font-bold text-foreground leading-none">HC-Scholarly Web Portal</span>
             <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">Research & Development</span>
           </div>
         </div>

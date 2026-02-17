@@ -16,7 +16,7 @@ export default function Hero() {
           <div className="animate-slide-in-left space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
               <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-semibold">Scholarly Web Portal for Research & Development</span>
+              <span className="text-sm font-semibold">HC-Scholarly Web Portal for Research & Development</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
