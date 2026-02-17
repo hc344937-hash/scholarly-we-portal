@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X, Github, GraduationCap, School } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,46 +21,40 @@ export default function Header() {
       <nav className="container flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <Github className="w-8 h-8 text-accent" />
-          <span className="text-xl font-bold text-foreground hidden sm:inline">GitHub Student Portal</span>
-          <span className="text-xl font-bold text-foreground sm:hidden">Portal</span>
+          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-accent-foreground">
+            <GraduationCap className="w-6 h-6" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-foreground leading-none">Scholarly Web Portal</span>
+            <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">Research & Development</span>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          <button
-            onClick={() => scrollToSection('hero')}
-            className="btn-ghost text-sm font-medium"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection('resources')}
-            className="btn-ghost text-sm font-medium"
-          >
-            Resources
-          </button>
-          <button
-            onClick={() => scrollToSection('github-integration')}
-            className="btn-ghost text-sm font-medium"
-          >
-            GitHub Integration
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="btn-ghost text-sm font-medium"
-          >
-            Contact
-          </button>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
-            Get Started
+        <div className="hidden lg:flex items-center gap-6">
+          <button onClick={() => scrollToSection('hero')} className="btn-ghost text-sm font-medium">Home</button>
+          <button onClick={() => scrollToSection('resources')} className="btn-ghost text-sm font-medium">Journals</button>
+          <button onClick={() => scrollToSection('toolkit')} className="btn-ghost text-sm font-medium">Workshop Toolkit</button>
+          <button onClick={() => scrollToSection('github-integration')} className="btn-ghost text-sm font-medium">GitHub</button>
+          <button onClick={() => scrollToSection('contact')} className="btn-ghost text-sm font-medium">Contact</button>
+          
+          <div className="h-6 w-px bg-border mx-2" />
+          
+          <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors">
+            <School className="w-4 h-4" />
+            Moodle
+          </a>
+          
+          <a href="https://github.com/hc344937-hash/scholarly-we-portal" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm flex items-center gap-2">
+            <Github className="w-4 h-4" />
+            Repository
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
+          className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
         >
           {isMenuOpen ? (
             <X className="w-6 h-6" />
@@ -72,40 +66,24 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm animate-fade-in-up">
-          <div className="container py-4 space-y-3 flex flex-col">
-            <button
-              onClick={() => scrollToSection('hero')}
-              className="btn-ghost w-full text-left text-sm font-medium"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('resources')}
-              className="btn-ghost w-full text-left text-sm font-medium"
-            >
-              Resources
-            </button>
-            <button
-              onClick={() => scrollToSection('github-integration')}
-              className="btn-ghost w-full text-left text-sm font-medium"
-            >
-              GitHub Integration
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="btn-ghost w-full text-left text-sm font-medium"
-            >
-              Contact
-            </button>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full text-center text-sm mt-4"
-            >
-              Get Started
-            </a>
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-sm animate-fade-in-up">
+          <div className="container py-6 space-y-4 flex flex-col">
+            <button onClick={() => scrollToSection('hero')} className="text-left text-sm font-medium py-2">Home</button>
+            <button onClick={() => scrollToSection('resources')} className="text-left text-sm font-medium py-2">Journals & Resources</button>
+            <button onClick={() => scrollToSection('toolkit')} className="text-left text-sm font-medium py-2">Workshop Toolkit</button>
+            <button onClick={() => scrollToSection('github-integration')} className="text-left text-sm font-medium py-2">GitHub Integration</button>
+            <button onClick={() => scrollToSection('contact')} className="text-left text-sm font-medium py-2">Contact</button>
+            
+            <div className="pt-4 border-t border-border space-y-3">
+              <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-orange-600">
+                <School className="w-4 h-4" />
+                Access Moodle
+              </a>
+              <a href="https://github.com/hc344937-hash/scholarly-we-portal" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center text-sm flex items-center justify-center gap-2">
+                <Github className="w-4 h-4" />
+                View Repository
+              </a>
+            </div>
           </div>
         </div>
       )}

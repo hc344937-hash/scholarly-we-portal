@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin, Twitter, ExternalLink } from 'lucide-react';
+import { Github, Mail, Linkedin, Twitter, ExternalLink, GraduationCap, School } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,112 +11,54 @@ export default function Footer() {
           {/* About */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold flex items-center gap-2">
-              <Github className="w-6 h-6" />
-              GitHub Student Portal
+              <GraduationCap className="w-6 h-6 text-accent" />
+              Scholarly Web Portal
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Empowering students and researchers with curated academic resources and GitHub integration tools.
+              Empowering the academic community with premium Scopus journals, conference tools, and collaborative workshop resources.
             </p>
           </div>
 
           {/* Resources */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-white">Resources</h4>
+            <h4 className="font-semibold text-white">Research Tools</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="https://docs.github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  GitHub Documentation
+                <a href="https://www.scopus.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                  Scopus Database
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a
-                  href="https://github.com/features/education"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  GitHub Education
+                <a href="https://ugccare.unipune.ac.in" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                  UGC Care List
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a
-                  href="https://github.com/topics/academic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  Academic Projects
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/topics/research"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  Research Repositories
+                <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                  Moodle LMS
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Learning */}
+          {/* Academic Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-white">Learning</h4>
+            <h4 className="font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="https://github.com/skills"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  GitHub Skills
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <a href="#resources" className="text-gray-400 hover:text-white transition-colors text-sm">Journals & Conferences</a>
               </li>
               <li>
-                <a
-                  href="https://github.com/community"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  Community
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <a href="#toolkit" className="text-gray-400 hover:text-white transition-colors text-sm">Workshop Toolkit</a>
               </li>
               <li>
-                <a
-                  href="https://github.blog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  GitHub Blog
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <a href="#github-integration" className="text-gray-400 hover:text-white transition-colors text-sm">GitHub for Research</a>
               </li>
               <li>
-                <a
-                  href="https://github.com/about"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-                >
-                  About GitHub
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <a href="#contact" className="text-gray-400 hover:text-white transition-colors text-sm">Contact Support</a>
               </li>
             </ul>
           </div>
@@ -126,7 +68,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/hc344937-hash/scholarly-we-portal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
@@ -135,13 +77,11 @@ export default function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:support@scholarlyportal.edu"
                 className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                aria-label="Email"
               >
-                <Twitter className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -151,13 +91,6 @@ export default function Footer() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:contact@example.com"
-                className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -169,18 +102,11 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} GitHub Student Portal. All rights reserved.
+            © {currentYear} Scholarly Web Portal. Built for Academic Excellence.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Contact Us
-            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

@@ -1,72 +1,110 @@
 import { useState, useMemo } from 'react';
-import { Search, BookOpen, Database, Code, Users, Zap, FileText, Globe } from 'lucide-react';
+import { Search, BookOpen, Database, Code, Users, Zap, FileText, Globe, GraduationCap, Microscope, Landmark, Stethoscope, Briefcase, Cpu, FlaskConical, Brain, Gavel, LayoutGrid } from 'lucide-react';
 
 const resourcesData = [
   {
     id: 1,
-    title: 'GitHub Docs',
-    description: 'Comprehensive documentation for GitHub features and workflows',
-    category: 'Tools',
-    icon: Code,
+    title: 'Scopus Indexed Journals',
+    description: 'Comprehensive database of peer-reviewed journals across all academic disciplines.',
+    category: 'Journals',
+    icon: BookOpen,
     color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
   },
   {
     id: 2,
-    title: 'Research Papers',
-    description: 'Access to peer-reviewed research papers and academic journals',
-    category: 'Databases',
-    icon: FileText,
+    title: 'UGC Care Journals',
+    description: 'Reference list of quality journals for academic research in India.',
+    category: 'Journals',
+    icon: GraduationCap,
     color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
   },
   {
     id: 3,
-    title: 'Academic Databases',
-    description: 'Explore multiple academic databases for research materials',
-    category: 'Databases',
-    icon: Database,
+    title: 'Scopus Conferences',
+    description: 'Find high-impact academic conferences indexed in Scopus.',
+    category: 'Conferences',
+    icon: Globe,
     color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
   },
   {
     id: 4,
-    title: 'Study Materials',
-    description: 'Curated study guides and learning resources for students',
-    category: 'Study Materials',
-    icon: BookOpen,
+    title: 'Online Conferences',
+    description: 'Discover upcoming virtual and hybrid scholarly conferences worldwide.',
+    category: 'Conferences',
+    icon: Monitor,
     color: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
   },
   {
     id: 5,
-    title: 'Collaboration Tools',
-    description: 'Tools for team collaboration and project management',
-    category: 'Tools',
-    icon: Users,
+    title: 'Engineering & Technology',
+    description: 'Research papers and resources for computer science, AI, and electronics.',
+    category: 'Topics',
+    icon: Cpu,
     color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400',
   },
   {
     id: 6,
-    title: 'Learning Resources',
-    description: 'Interactive tutorials and online courses for skill development',
-    category: 'Study Materials',
-    icon: Zap,
+    title: 'Medical & Health Science',
+    description: 'Clinical studies, nursing resources, and medical research databases.',
+    category: 'Topics',
+    icon: Stethoscope,
     color: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400',
   },
   {
     id: 7,
-    title: 'Open Source Projects',
-    description: 'Discover and contribute to open-source academic projects',
-    category: 'Tools',
-    icon: Globe,
+    title: 'Business & Economics',
+    description: 'Financial journals, management studies, and economic research tools.',
+    category: 'Topics',
+    icon: Briefcase,
     color: 'bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400',
   },
   {
     id: 8,
-    title: 'Citation Tools',
-    description: 'Tools for managing citations and bibliography formatting',
-    category: 'Tools',
-    icon: FileText,
+    title: 'Physical & Life Sciences',
+    description: 'Chemistry, biology, and physics research materials and journals.',
+    category: 'Topics',
+    icon: FlaskConical,
     color: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
   },
+  {
+    id: 9,
+    title: 'Social Sciences & Humanities',
+    description: 'Psychology, sociology, and education research resources.',
+    category: 'Topics',
+    icon: Users,
+    color: 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400',
+  },
+  {
+    id: 10,
+    title: 'Law & Jurisprudence',
+    description: 'Legal research, case studies, and constitutional law databases.',
+    category: 'Topics',
+    icon: Gavel,
+    color: 'bg-slate-100 dark:bg-slate-900/30 text-slate-600 dark:text-slate-400',
+  },
 ];
+
+// Helper to handle the icon import issue
+function Monitor(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="14" x="2" y="3" rx="2" />
+      <line x1="8" x2="16" y1="21" y2="21" />
+      <line x1="12" x2="12" y1="17" y2="21" />
+    </svg>
+  );
+}
 
 export default function Resources() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -88,9 +126,9 @@ export default function Resources() {
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="section-title mb-4">Academic Resources</h2>
+          <h2 className="section-title mb-4">Academic Resources & Journals</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Discover a comprehensive collection of tools, databases, and study materials curated for students and researchers.
+            Discover a comprehensive collection of Scopus journals, conferences, and study materials curated for scholarly research.
           </p>
         </div>
 
@@ -100,7 +138,7 @@ export default function Resources() {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search resources..."
+              placeholder="Search journals, conferences, topics..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-all"
@@ -126,7 +164,7 @@ export default function Resources() {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           {filteredResources.map((resource, index) => {
             const Icon = resource.icon;
             return (
@@ -141,16 +179,16 @@ export default function Resources() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold text-foreground mb-2">{resource.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2 leading-tight">{resource.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{resource.description}</p>
 
                 {/* Category Badge */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto">
                   <span className="inline-block px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground">
                     {resource.category}
                   </span>
                   <a href="#" className="text-accent hover:text-accent/80 font-medium text-sm">
-                    Learn →
+                    Find →
                   </a>
                 </div>
               </div>
